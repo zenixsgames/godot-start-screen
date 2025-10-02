@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://i5m4fmrq3wra"]
+
+[ext_resource type="PackedScene" uid="uid://djhqu4wcg4rxj" path="res://scenes/main/title_screen.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://cmsa60ehh8rbp" path="res://scenes/main/main.gd" id="1_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://ct5c5d3qbia1t" path="res://scenes/main/select_player.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://dulkw513bce6r" path="res://scenes/main/create_player.tscn" id="3_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://j70vmrqs5arv" path="res://scenes/main/select_world.tscn" id="4_6q06x"]
+[ext_resource type="PackedScene" uid="uid://djwx010m2w43t" path="res://scenes/main/create_world.tscn" id="5_6q06x"]
+
+[node name="main" type="Node" groups=["main"]]
+script = ExtResource("1_ow5a4")
+
+[node name="title_screen" parent="." instance=ExtResource("1_hyk8p")]
+
+[node name="select_player" parent="." instance=ExtResource("2_iuonh")]
+
+[node name="create_player" parent="." instance=ExtResource("3_l3cfh")]
+
+[node name="select_world" parent="." instance=ExtResource("4_6q06x")]
+
+[node name="create_world" parent="." instance=ExtResource("5_6q06x")]

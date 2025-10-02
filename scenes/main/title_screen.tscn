@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://djhqu4wcg4rxj"]
+
+[ext_resource type="FontFile" uid="uid://beyr33vcgbm81" path="res://assets/font/LuckiestGuy.ttf" id="1_hn2w6"]
+[ext_resource type="Script" uid="uid://dp8o551s1afyg" path="res://scenes/main/title_screen.gd" id="1_oq6sn"]
+[ext_resource type="StyleBox" uid="uid://c4b122e0cvpoy" path="res://scenes/global/btn/normal_btn.tres" id="2_6kkck"]
+[ext_resource type="StyleBox" uid="uid://bwpmac4yonj2h" path="res://scenes/global/btn/pressed_btn.tres" id="3_mr1mw"]
+[ext_resource type="StyleBox" uid="uid://c1i73j4eax07c" path="res://scenes/global/btn/hover_btn.tres" id="4_8453e"]
+[ext_resource type="StyleBox" uid="uid://bp41wgc3sfray" path="res://scenes/global/btn/disabled_btn.tres" id="5_cddka"]
+[ext_resource type="StyleBox" uid="uid://b3p4mq3jh4ghh" path="res://scenes/global/btn/focus_btn.tres" id="6_oq6sn"]
+
+[node name="title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oq6sn")
+
+[node name="title_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 793.0
+offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("1_hn2w6")
+theme_override_font_sizes/font_size = 128
+text = "TITLE OFㅤ"
+vertical_alignment = 1
+
+[node name="subtitle_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 651.0
+offset_bottom = 478.0
+theme_override_fonts/font = ExtResource("1_hn2w6")
+theme_override_font_sizes/font_size = 128
+text = "GAMEㅤ"
+vertical_alignment = 1
+
+[node name="play_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 550.0
+offset_right = 400.0
+offset_bottom = 630.0
+localize_numeral_system = false
+theme_override_constants/icon_max_width = 24
+theme_override_fonts/font = ExtResource("1_hn2w6")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("2_6kkck")
+theme_override_styles/pressed = ExtResource("3_mr1mw")
+theme_override_styles/hover = ExtResource("4_8453e")
+theme_override_styles/disabled = ExtResource("5_cddka")
+theme_override_styles/focus = ExtResource("6_oq6sn")
+text = "▶    PLAY"
+
+[connection signal="pressed" from="play_btn" to="." method="_on_play_btn_pressed"]

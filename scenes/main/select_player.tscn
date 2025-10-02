@@ -1,0 +1,88 @@
+[gd_scene load_steps=15 format=3 uid="uid://ct5c5d3qbia1t"]
+
+[ext_resource type="Script" uid="uid://cqrhlt4cn0vbt" path="res://scenes/main/select_player.gd" id="1_04cc0"]
+[ext_resource type="StyleBox" uid="uid://dangb5pt2glm4" path="res://scenes/global/panel/panel.tres" id="1_bcuj4"]
+[ext_resource type="FontFile" uid="uid://beyr33vcgbm81" path="res://assets/font/LuckiestGuy.ttf" id="1_edrxi"]
+[ext_resource type="StyleBox" uid="uid://c4b122e0cvpoy" path="res://scenes/global/btn/normal_btn.tres" id="2_bcuj4"]
+[ext_resource type="StyleBox" uid="uid://bwpmac4yonj2h" path="res://scenes/global/btn/pressed_btn.tres" id="3_fs0du"]
+[ext_resource type="StyleBox" uid="uid://c1i73j4eax07c" path="res://scenes/global/btn/hover_btn.tres" id="4_u4o0h"]
+[ext_resource type="StyleBox" uid="uid://bp41wgc3sfray" path="res://scenes/global/btn/disabled_btn.tres" id="5_lntmq"]
+[ext_resource type="StyleBox" uid="uid://b3p4mq3jh4ghh" path="res://scenes/global/btn/focus_btn.tres" id="6_obi8g"]
+[ext_resource type="FontFile" uid="uid://ir3t8xybm2be" path="res://assets/font/Bungee-Regular.ttf" id="8_wibkl"]
+[ext_resource type="StyleBox" uid="uid://c4p6w77gk6tqw" path="res://scenes/global/btn/normal_circle.tres" id="9_0v8sq"]
+[ext_resource type="StyleBox" uid="uid://ctaxkk6gidyje" path="res://scenes/global/btn/pressed_circle.tres" id="10_04cc0"]
+[ext_resource type="StyleBox" uid="uid://bsgm6cnrj4y03" path="res://scenes/global/btn/hover_circle.tres" id="11_c5mev"]
+[ext_resource type="StyleBox" uid="uid://cu1k0gt41u1eo" path="res://scenes/global/btn/disabled_circle.tres" id="12_0msuf"]
+[ext_resource type="StyleBox" uid="uid://dmhpqfy30s7h7" path="res://scenes/global/btn/focus_circle.tres" id="13_0v8sq"]
+
+[node name="select_player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_04cc0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 90.0
+offset_right = 1360.0
+offset_bottom = 989.99994
+theme_override_styles/panel = ExtResource("1_bcuj4")
+
+[node name="next_btn" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 780.0
+offset_right = 500.0
+offset_bottom = 860.0
+theme_override_fonts/font = ExtResource("1_edrxi")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("2_bcuj4")
+theme_override_styles/pressed = ExtResource("3_fs0du")
+theme_override_styles/hover = ExtResource("4_u4o0h")
+theme_override_styles/disabled = ExtResource("5_lntmq")
+theme_override_styles/focus = ExtResource("6_obi8g")
+text = "ㅤnewㅤ"
+
+[node name="back_btn" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 130.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("8_wibkl")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("9_0v8sq")
+theme_override_styles/pressed = ExtResource("10_04cc0")
+theme_override_styles/hover = ExtResource("11_c5mev")
+theme_override_styles/disabled = ExtResource("12_0msuf")
+theme_override_styles/focus = ExtResource("13_0v8sq")
+text = "◀"
+
+[node name="label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0.06666667, 0.11764706, 0.18431373, 1)
+theme_override_fonts/font = ExtResource("1_edrxi")
+theme_override_font_sizes/font_size = 64
+text = "ㅤSELECT PLAYERㅤ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 750.0
+offset_bottom = 750.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[connection signal="pressed" from="Panel/next_btn" to="." method="_on_next_btn_pressed"]
+[connection signal="pressed" from="Panel/back_btn" to="." method="_on_back_btn_pressed"]

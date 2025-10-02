@@ -1,0 +1,192 @@
+[gd_scene load_steps=20 format=3 uid="uid://dulkw513bce6r"]
+
+[ext_resource type="Script" uid="uid://dg68sfy2hbml4" path="res://scenes/main/create_player.gd" id="1_4c4jj"]
+[ext_resource type="StyleBox" uid="uid://dangb5pt2glm4" path="res://scenes/global/panel/panel.tres" id="1_hsgiq"]
+[ext_resource type="FontFile" uid="uid://beyr33vcgbm81" path="res://assets/font/LuckiestGuy.ttf" id="2_klo70"]
+[ext_resource type="StyleBox" uid="uid://c4b122e0cvpoy" path="res://scenes/global/btn/normal_btn.tres" id="3_4c4jj"]
+[ext_resource type="StyleBox" uid="uid://bwpmac4yonj2h" path="res://scenes/global/btn/pressed_btn.tres" id="4_xa4lr"]
+[ext_resource type="StyleBox" uid="uid://c1i73j4eax07c" path="res://scenes/global/btn/hover_btn.tres" id="5_vsjiu"]
+[ext_resource type="StyleBox" uid="uid://bp41wgc3sfray" path="res://scenes/global/btn/disabled_btn.tres" id="6_ro1b2"]
+[ext_resource type="StyleBox" uid="uid://b3p4mq3jh4ghh" path="res://scenes/global/btn/focus_btn.tres" id="7_rrn1m"]
+[ext_resource type="FontFile" uid="uid://ir3t8xybm2be" path="res://assets/font/Bungee-Regular.ttf" id="8_l1ikv"]
+[ext_resource type="StyleBox" uid="uid://c4p6w77gk6tqw" path="res://scenes/global/btn/normal_circle.tres" id="9_0tb51"]
+[ext_resource type="StyleBox" uid="uid://ctaxkk6gidyje" path="res://scenes/global/btn/pressed_circle.tres" id="10_edts6"]
+[ext_resource type="StyleBox" uid="uid://bsgm6cnrj4y03" path="res://scenes/global/btn/hover_circle.tres" id="11_46jep"]
+[ext_resource type="StyleBox" uid="uid://cu1k0gt41u1eo" path="res://scenes/global/btn/disabled_circle.tres" id="12_h37fq"]
+[ext_resource type="StyleBox" uid="uid://dmhpqfy30s7h7" path="res://scenes/global/btn/focus_circle.tres" id="13_fwxx4"]
+[ext_resource type="Texture2D" uid="uid://67wtytfywg3i" path="res://assets/texture/player_skin/pink.png" id="14_klo70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klo70"]
+bg_color = Color(1, 1, 1, 0)
+border_color = Color(0.06666667, 0.11764706, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c4jj"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa4lr"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsjiu"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="create_player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4c4jj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 90.0
+offset_right = 1360.0
+offset_bottom = 989.99994
+theme_override_styles/panel = ExtResource("1_hsgiq")
+
+[node name="next_btn" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 780.0
+offset_right = 520.0
+offset_bottom = 860.0
+theme_override_fonts/font = ExtResource("2_klo70")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_4c4jj")
+theme_override_styles/pressed = ExtResource("4_xa4lr")
+theme_override_styles/hover = ExtResource("5_vsjiu")
+theme_override_styles/disabled = ExtResource("6_ro1b2")
+theme_override_styles/focus = ExtResource("7_rrn1m")
+text = "ㅤcreateㅤ"
+
+[node name="back_btn" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 130.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("8_l1ikv")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("9_0tb51")
+theme_override_styles/pressed = ExtResource("10_edts6")
+theme_override_styles/hover = ExtResource("11_46jep")
+theme_override_styles/disabled = ExtResource("12_h37fq")
+theme_override_styles/focus = ExtResource("13_fwxx4")
+text = "◀"
+
+[node name="label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0.06666667, 0.11764706, 0.18431373, 1)
+theme_override_fonts/font = ExtResource("2_klo70")
+theme_override_font_sizes/font_size = 64
+text = "ㅤCREATE PLAYERㅤ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 750.0
+offset_bottom = 750.0
+
+[node name="name_label" type="Label" parent="Panel/Control"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.06666667, 0.11764706, 0.18431373, 1)
+theme_override_fonts/font = ExtResource("2_klo70")
+theme_override_font_sizes/font_size = 32
+text = "PLAYER NAME:"
+vertical_alignment = 1
+
+[node name="name_input" type="LineEdit" parent="Panel/Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 100.0
+offset_right = 650.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.06666667, 0.11764706, 0.18431373, 1)
+theme_override_fonts/font = ExtResource("2_klo70")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_klo70")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4c4jj")
+text = "CLICK TO WRITE"
+alignment = 1
+max_length = 16
+
+[node name="skin_label" type="Label" parent="Panel/Control"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 180.0
+offset_right = 300.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0.06666667, 0.11764706, 0.18431373, 1)
+theme_override_fonts/font = ExtResource("2_klo70")
+theme_override_font_sizes/font_size = 32
+text = "PLAYER SKIN:"
+vertical_alignment = 1
+
+[node name="current_skin_label" type="Label" parent="Panel/Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 180.0
+offset_right = 650.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0.06666667, 0.11764706, 0.18431373, 1)
+theme_override_fonts/font = ExtResource("2_klo70")
+theme_override_font_sizes/font_size = 32
+text = "PINK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skin_img" type="TextureRect" parent="Panel/Control"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 230.0
+offset_right = 560.0
+offset_bottom = 390.0
+texture = ExtResource("14_klo70")
+
+[node name="left_btn" type="Button" parent="Panel/Control"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 300.0
+offset_right = 350.0
+offset_bottom = 332.0
+theme_override_fonts/font = ExtResource("8_l1ikv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("9_0tb51")
+theme_override_styles/pressed = ExtResource("10_edts6")
+theme_override_styles/hover = ExtResource("11_46jep")
+theme_override_styles/disabled = ExtResource("12_h37fq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xa4lr")
+text = "◀"
+
+[node name="right_btn" type="Button" parent="Panel/Control"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 300.0
+offset_right = 642.0
+offset_bottom = 332.0
+theme_override_fonts/font = ExtResource("8_l1ikv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("9_0tb51")
+theme_override_styles/pressed = ExtResource("10_edts6")
+theme_override_styles/hover = ExtResource("11_46jep")
+theme_override_styles/disabled = ExtResource("12_h37fq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vsjiu")
+text = "▶"
+
+[connection signal="pressed" from="Panel/next_btn" to="." method="_on_next_btn_pressed"]
+[connection signal="pressed" from="Panel/back_btn" to="." method="_on_back_btn_pressed"]
+[connection signal="editing_toggled" from="Panel/Control/name_input" to="." method="_on_name_input_editing_toggled"]
+[connection signal="text_changed" from="Panel/Control/name_input" to="." method="_on_name_input_text_changed"]
+[connection signal="pressed" from="Panel/Control/left_btn" to="." method="_on_left_btn_pressed"]
+[connection signal="pressed" from="Panel/Control/right_btn" to="." method="_on_right_btn_pressed"]
